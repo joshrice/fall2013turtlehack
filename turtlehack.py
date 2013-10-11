@@ -16,6 +16,14 @@ def colored_square(turtle, side_length, color):
     turtle.left(90)
   turtle.left(90)
   
+# A function that take a turtle, dot size, color, and number of dots in line to make a dotted line
+def dotted_line(turtle, number_of_dots, dot_size, color):
+	for i in range(number_of_dots):
+	  turtle.dot(dot_size, color)
+	  turtle.penup()
+	  turtle.forward(dot_size * 2)
+	  turtle.pendown()
+  
 # A function that takes a number and makes that many random sized circles
 def random_circle(turtle, number_of_circles, max_size = 100):
 	for i in range(number_of_circles):
