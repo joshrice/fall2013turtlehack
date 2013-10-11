@@ -39,9 +39,21 @@ def random_color():
 
 # A function that takes a turtle and a pair of numbers and sets the turtle to a random location from x to -x and y to -y
 def random_location(turtle, x, y):
-  random_x = random.randint(-x, x)
-  random_y = random.randint(-y, y)
+  random_x = turtle.xcor() + random.randint(-x, x)
+  random_y = turtle.ycor() + random.randint(-y, y)
   turtle.setpos(random_x, random_y)
+
+# A function that makes n random colored and located dots inside x, y
+# Thanks to Stacey Mantooth for the idea
+def pox(turtle, x, y, n = 10):
+  origx = turtle.xcor()
+  origy = turtle.ycor()
+  turtle.penup()
+  for i in range(n):
+    random_location(turtle, x, y)
+    turtle.dot(random.randint(3, 10), random_color())
+    turtle.setpos(origx, origy)
+  turtle.pendown()
 
 # A function that draws an n-sided polygon
 def n_sided_polygon(turtle, n, color="#FFFFFF", line_thickness=1, line_length=80):
