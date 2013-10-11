@@ -100,6 +100,14 @@ try:
 except:  
   draw_error("random_location()")
 
+# pox() test
+move(test_turtle, 0, -100)
+try:
+  print_testing("pox()")
+  turtlehack.pox(test_turtle, 25, 25, 25)
+except:
+  draw_error("pox()")
+
 ####################
 print "End of tests"
 
