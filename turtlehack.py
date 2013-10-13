@@ -55,7 +55,7 @@ def pox(turtle, x, y, n = 10):
   origy = turtle.ycor()
   turtle.penup()
   for i in range(n):
-    random_location(turtle, x, y)
+    random_location(turtle, x, y, True)
     turtle.dot(random.randint(3, 10), random_color())
     turtle.setpos(origx, origy)
   turtle.pendown()
