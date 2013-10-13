@@ -38,10 +38,15 @@ def random_color():
 	return "#" +color_value
 
 # A function that takes a turtle and a pair of numbers and sets the turtle to a random location from x to -x and y to -y
-def random_location(turtle, x, y):
-  random_x = turtle.xcor() + random.randint(-x, x)
-  random_y = turtle.ycor() + random.randint(-y, y)
-  turtle.setpos(random_x, random_y)
+def random_location(turtle, x, y, relative=True):
+  if not relative:
+	random_x = random.randint(-x, x)
+	random_y = random.randint(-y, y)
+	turtle.setpos(random_x, random_y)
+  else:
+	random_x = turtle.xcor() + random.randint(-x, x)
+	random_y = turtle.ycor() + random.randint(-y, y)
+	turtle.setpos(random_x, random_y)
 
 # A function that makes n random colored and located dots inside x, y
 # Thanks to Stacey Mantooth for the idea
